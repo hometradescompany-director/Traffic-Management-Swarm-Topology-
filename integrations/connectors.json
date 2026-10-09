@@ -1,0 +1,39 @@
+{
+  "registry_version": 1,
+  "repository": "hometradescompany-director/Traffic-Management-Swarm-Topology-",
+  "transport": "local-json",
+  "bindings": [
+    {
+      "module": "src/connectors/observation-import.mjs",
+      "operation": "ingestTrafficObservations",
+      "consumes": [
+        "traffic-observations.v1"
+      ],
+      "produces": "traffic-ingest-receipt.v1",
+      "status": "offline_implemented",
+      "network_calls": false
+    }
+  ],
+  "peers": [
+    {
+      "repository": "hometradescompany-director/SEQ-Maps",
+      "url": "https://github.com/hometradescompany-director/SEQ-Maps",
+      "status": "offline_contract_only"
+    },
+    {
+      "repository": "hometradescompany-director/Swarm-city-hub",
+      "url": "https://github.com/hometradescompany-director/Swarm-city-hub",
+      "status": "offline_contract_only"
+    }
+  ],
+  "external_sources": [],
+  "controller_integration": {
+    "status": "not_configured",
+    "authority": false
+  },
+  "skills": [
+    "federation-contract-author",
+    "provenance-guardian"
+  ]
+}
+
